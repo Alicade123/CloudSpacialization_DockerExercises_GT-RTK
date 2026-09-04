@@ -29,3 +29,5 @@ The Nginx page must be reachable from your browser or HTTP client.
 - **`*docker ps -a*`**
 - **`*docker stop ngnixcontainer*`**
 - **`*docker rm ngnixcontainer*`**
+
+![Nginx_container](image.png)
