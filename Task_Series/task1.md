@@ -27,12 +27,13 @@ Run a container based on: `docker/getting-started`
 - [ ]  The container can be stopped and started again.
 - [ ]  The container is removed successfully.
 
-- **`*docker pull -t mynginx:lastest nginx:latest*`**
-- **`*docker run -d —name mynginxapp -p 9000:80 mynginx:latest*`**
-- **`*docker images*`**
-- **`*docker ps*`**
-- **`*docker ps -a*`**
-- **`*docker stop 725690356d98*`**
-- **`*docker start 725690356d98*`**
-- **`*docker stop 725690356d98*`**
-- **`*docker rm 725690356d98*`**
+### Resolutions
+- **`docker pull -t mynginx:lastest nginx:latest`**
+- **`docker run -d —name mynginxapp -p 9000:80 mynginx:latest`**
+- **`docker images`**
+- **`docker ps`**
+- **`docker ps -a`**
+- **`docker stop 725690356d98`**
+- **`docker start 725690356d98`**
+- **`docker stop 725690356d98`**
+- **`docker rm 725690356d98`**
