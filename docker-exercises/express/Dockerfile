@@ -1,9 +1,13 @@
-FROM node:19
+FROM node:24-slim
 
-WORKDIR /app/
+WORKDIR /app
 
-COPY Package.*json server.js /app/
+COPY package*.json ./
 
 RUN npm install 
+
+COPY server.js ./
+
+EXPOSE 5000
 
 CMD ["node", "server.js"]
