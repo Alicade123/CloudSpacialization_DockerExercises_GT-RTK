@@ -1,20 +1,25 @@
-# Step 1: Use the legacy SDK image that natively understands project.json
-FROM microsoft/dotnet:1.0.1-sdk-projectjson AS build
+# Stage 1: Build
+FROM msimons/dotnet:1.0-sdk AS build
 
 WORKDIR /app
 
-# Copy your existing project file structure 
-COPY src/Hello/project.json ./
+COPY src/Hello/project.json ./src/Hello/
 
-# This will now successfully restore dependencies via project.json
-RUN dotnet restore
+WORKDIR /app/src/Hello
+
+RUN dotnet restore project.json
+
+WORKDIR /app
 
 COPY . .
 
-RUN dotnet publish -c Release -o out
+WORKDIR /app/src/Hello
 
-# Step 2: Use the matching 1.0 runtime to keep the final image clean
-FROM microsoft/dotnet:1.0.5-runtime
+RUN dotnet publish -c Release -o /app/out
+
+
+# Stage 2: Runtime
+FROM msimons/dotnet:1.0-runtime
 
 WORKDIR /app
 
@@ -22,4 +27,4 @@ COPY --from=build /app/out .
 
 EXPOSE 8080
 
-CMD ["dotnet", "hello.dll"]
+CMD ["dotnet", "Hello.dll"]
