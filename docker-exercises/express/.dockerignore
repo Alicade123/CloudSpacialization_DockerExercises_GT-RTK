@@ -1,0 +1,28 @@
+# Dependency Directories
+node_modules/
+jspm_packages/
+
+# Git Metadata
+.git
+.gitignore
+.gitattributes
+
+# Local Configuration & Secrets
+.env
+.env.local
+.env.*.local
+
+# Debug Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production Build Artifacts - in case  build tools are used
+dist/
+build/
+.next/
+
+# Unnecessary Development Documents
+README.md
+LICENSE
+.vscode/
